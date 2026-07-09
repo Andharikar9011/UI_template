@@ -1,494 +1,262 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/default.css" />
+    <link rel="stylesheet" href="assets/css/sidenav.css" />
+    <link rel="stylesheet" href="assets/css/mainContent.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <style>
-    :root {
-      --primary-color: #f6f8fc;
-      --side-nav-color: #fffefe;
-      --secondary-color: #1965e4;
-      --sidenav-card: #f4f5fc;
-      --font-primary: #1a1a1a;
-      --font-secondary: #fefdfd;
-      --font-tertiary: #1965e4;
-      --font-side-nav: #5f6b8d;
-      --border-color: #ccc;
-      --black: #000;
-      --white: #fff;
-      --gray: #f0f0f0;
-      --light-gray: #e0e0e0;
-      --dark-gray: #a0a0a0;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Inter", sans-serif;
-      background-color: var(--primary-color);
-
-    }
-
-    sidenav {
-      background-color: var(--side-nav-color);
-      width: 350px;
-      height: 100vh;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .sidenav-header h2,
-    .sidenav-header p {
-      margin: 0;
-      padding: 0;
-    }
-
-    pre {
-      margin: 0;
-      padding: 0;
-      font-family: inherit;
-      /* Ensures the pre tag uses the same font as its parent */
-    }
-
-    ul,
-    li {
-      list-style-type: none;
-      /* Removes bullet points */
-      margin: 0;
-      padding: 0;
-    }
-
-    a {
-      text-decoration: none;
-      /* Removes the underline */
-      color: inherit;
-      /* Forces link to use the text color of its parent */
-      cursor: pointer;
-      /* Ensures the pointer hand appears on hover */
-    }
-
-    .sidenav-header {
-      display: flex;
-      /* flex-direction: column; */
-      align-items: center;
-      padding: 10px 20px;
-      gap: 5px;
-    }
-
-    .sidenav-text {
-      display: flex;
-      flex-direction: column;
-      /* margin-left: 10px; */
-    }
-
-    .sidenav-logo {
-      width: 30px;
-      height: 30px;
-      background: url("assets/icons/logo.svg") no-repeat center/contain;
-    }
-
-    hr {
-      width: 100%;
-      border: 0.01px solid var(--light-gray);
-    }
-
-    .sidenav-content {
-      width: 70%;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .sidenav-content div {
-      padding: 15px;
-      border-radius: 10px;
-    }
-
-    .sidenav-content div:hover {
-      background-color: orange;
-      filter: invert(100%);
-    }
-
-    .sidenav-content a {
-      display: flex;
-      align-items: center;
-      /* gap: 10px; */
-    }
-
-    .sidenav-card {
-      width: 80%;
-      background-color: var(--sidenav-card);
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: calc(100% - 350px);
-      height: 100vh;
-      background-color: var(--primary-color);
-    }
-
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      width: calc(100% - 40px);
-      height: calc(100% - 40px);
-      background-color: var(--primary-color);
-      border-radius: 10px;
-      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-    }
-
-    .main-top {
-      width: 100%;
-      height: 6%;
-      background-color: var(--primary-color);
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .main-middle {
-      width: 100%;
-      height: 18%;
-      background-color: var(--secondary-color);
-      border-radius: 20px;
-      color: var(--white);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2px;
-      padding: 25px;
-
-    }
-
-    .info h3 {
-      padding-left: 10px;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .info p {
-      font-size: 12px;
-      padding-left: 10px;
-      margin-bottom: 10px;
-      line-height: 0.2;
-    }
-
-    .profile-info {
-      flex: 1;
-      margin-left: 30px;
-    }
-
-    .right {
-      display: flex;
-      gap: 50px;
-      text-align: center;
-      color: #dfe8ff;
-    }
-
-    .box p {
-      font-size: 12px;
-      color: #dfe8ff;
-    }
-
-    .box h4 {
-      margin-top: 10px;
-      Font-size: 20px;
-    }
-
-    hr {
-      border: none;
-      width: 1px;
-      height: 70px;
-      background-color: rgba(255, 255, 255, 0.3);
-      margin: 0 30px;
-    }
-
-    .main-bottom {
-      width: 100%;
-      height: 72%;
-      background-color: var(--primary-color);
-    }
-
-    .overview {
-      width: 68%;
-      background: #fff;
-      margin-top: 20px;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .overview h3 {
-      margin-bottom: 20px;
-      font-size: 20px;
-    }
-
-    .cards {
-      display: flex;
-      gap: 20px;
-    }
-
-    .card {
-      flex: 1;
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .card h4 {
-      color: #666;
-      margin-bottom: 10px;
-
-    }
-
-    .card h2 {
-      color: black;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #999;
-      font-size: 14px;
-    }
-
-    .personal-info {
-      width: 320px;
-      background: #fff;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .personal-info h2 {
-      font-size: 22px;
-      margin-bottom: 25px;
-      color: #222;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      font-size: 16px;
-    }
-
-    .info-row span:first-child {
-      color: #777;
-    }
-
-    .info-row span:last-child {
-      color: #222;
-      font-weight: 500;
-    }
-
-    .profile-link {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      color: #1565ff;
-      font-weight: bold;
-    }
-
-    .menu-icon {
-      cursor: pointer;
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-      border-radius: 50%;
-      background-color: var(--white);
-      padding: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container" style="display: flex; flex-direction: row; justify-content: center">
-    <sidenav>
-      <div class="sidenav-header">
-        <div class="sidenav-logo" aria-label="Logo"></div>
-        <div class="sidenav-text">
-          <div class="sidenav-title">
-            <h2>EduTrack</h2>
-          </div>
-          <div class="sidenav-subtitle">
-            <p>Student Portal</p>
+  <body>
+    <div
+      class="container"
+      style="display: flex; flex-direction: row; justify-content: center"
+    >
+      <sidenav>
+        <div class="sidenav-header">
+          <div class="sidenav-logo" aria-label="Logo"></div>
+          <div class="sidenav-text">
+            <div class="sidenav-title">
+              <h2>EduTrack</h2>
+            </div>
+            <div class="sidenav-subtitle">
+              <p>Student Portal</p>
+            </div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="sidenav-content">
-        <div>
-          <a href="#">
-            <img src="assets/icons/overview.svg" alt="Overview Icon"
-              style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Overview</pre>
-          </a>
+        <hr />
+        <div class="sidenav-content">
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/overview.svg"
+                alt="Overview Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Overview</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/academics.svg"
+                alt="Academics Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Academics</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/attendance.svg"
+                alt="Attendance Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Attendance</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/assignments.svg"
+                alt="Assignments Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Assignments</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/exams.svg"
+                alt="Exams Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Exams</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/timetable.svg"
+                alt="Timetable Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Timetable</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/fees.svg"
+                alt="Fees Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Fees</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/messages.svg"
+                alt="Messages Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Messages</pre>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                src="assets/icons/settings.svg"
+                alt="Settings Icon"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              <pre>Settings</pre>
+            </a>
+          </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/academics.svg" alt="Academics Icon"
-              style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Academics</pre>
-          </a>
+        <div class="sidenav-card">
+          <div style="padding: 20px">
+            <h3 style="color: var(--font-tertiary)">Keep Learning!</h3>
+            <p>
+              Stay Consistent <br />
+              and you'll achieve excellence.
+            </p>
+            <img
+              src="assets/images/nav_card_1.png"
+              alt="Support Icon"
+              style="width: 100%; margin-top: 10px"
+            />
+          </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/attendance.svg" alt="Attendance Icon"
-              style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Attendance</pre>
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/assignments.svg" alt="Assignments Icon"
-              style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Assignments</pre>
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/exams.svg" alt="Exams Icon" style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Exams</pre>
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/timetable.svg" alt="Timetable Icon"
-              style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Timetable</pre>
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/fees.svg" alt="Fees Icon" style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Fees</pre>
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/messages.svg" alt="Messages Icon"
-              style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Messages</pre>
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="assets/icons/settings.svg" alt="Settings Icon"
-              style="width: 20px; height: 20px; margin-right: 10px" />
-            <pre>Settings</pre>
-          </a>
-        </div>
-      </div>
-      <div class="sidenav-card">
-        <div style="padding: 20px">
-          <h3 style="color: var(--font-tertiary)">Keep Learning!</h3>
-          <p>
-            Stay Consistent <br />
-            and you'll achieve excellence.
-          </p>
-          <img src="assets/images/nav_card_1.png" alt="Support Icon" style="width: 100%; margin-top: 10px" />
-        </div>
-      </div>
-    </sidenav>
-    <main class="main-content">
-      <div class="main-container">
-        <div class="main-top">
-          <div style="
+      </sidenav>
+
+      <main class="main-content">
+        <div class="main-container">
+          <div class="main-top">
+            <div
+              style="
                 display: flex;
                 align-items: center;
                 gap: 10px;
                 padding-left: 5px;
-              ">
-            <img src="assets/icons/larr.svg" alt="Menu Icon" class="menu-icon" />
-            <h2 style="margin: 0; padding: 0">Student Profile</h2>
-          </div>
-          <div style="display: flex; align-items: center; gap: 10px">
-            <img src="assets/icons/bell.svg" alt="Notification Icon" class="menu-icon" />
-            <img src="assets/images/img.png" alt="Profile Picture" style="
+              "
+            >
+              <img
+                src="assets/icons/larr.svg"
+                alt="Menu Icon"
+                class="menu-icon"
+              />
+              <h2 style="margin: 0; padding: 0">Student Profile</h2>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <img
+                src="assets/icons/bell.svg"
+                alt="Notification Icon"
+                class="menu-icon"
+              />
+              <img
+                src="assets/images/img.png"
+                alt="Profile Picture"
+                style="
                   width: 40px;
                   height: 40px;
                   border-radius: 50%;
                   margin-left: 10px;
-                " />
+                "
+              />
 
-            <pre>John Doe</pre>
-            <img src="assets/icons/al.svg" alt="Notification Icon" style="
+              <pre>John Doe</pre>
+              <img
+                src="assets/icons/al.svg"
+                alt="Notification Icon"
+                style="
                   width: 20px;
                   height: 20px;
                   margin-right: 10px;
                   transform: rotate(270deg);
-                " />
+                "
+              />
+            </div>
           </div>
-        </div>
-        <div class="main-middle">
-          <div style="display:flex; padding: 15px; ">
-            <img src="c:\Users\vaish\OneDrive\Documents\Study\miniproject css\johndoe.jpeg" alt="John Doe"
-              style="border-radius: 50%; width: 100px; height: 100px;" />
-            <div class="info p">
-              <h3>John Doe</h3>
-              <p
-                style="background-color: aquamarine;border-radius: 20px;height: 20px;width:80px;justify-content: center;line-height: 1.5;">
-                Active Student</p>
 
-              <p>Computer Science Engineering</p>
-              <p> Roll No:21CS0456 &nbsp; . &nbsp; Batch:2021-2025</p>
-              <p>johndoe@email.com &nbsp; . &nbsp; +91 98765 43210</p>
+          <div class="main-middle">
+            <div class="display-flex-center" >
+              <img
+                src="./assets/images/img.png"
+                alt="John Doe"
+                style="border-radius: 50%; width: 100px; height: 100px; padding: 0px 30px;" 
+              />
+              <div
+                class="display-flex-center"
+                style="flex-direction: column; gap: 5px ; align-items: flex-start;"
+              >
+                <div class="display-flex-center" style="gap: 10px">
+                  <h1>John Doe</h1>
+                  <p
+                    style="
+                      background-color: aquamarine;
+                      border-radius: 20px;
+                      padding: 5px 10px;
+                    "
+                  >
+                    Active Student
+                  </p>
+                </div>
+                <div class="display-flex-center" style="align-items: flex-start; flex-direction: column; gap: 5px">
+                <p style="font-size: medium;">Computer Science Engineering</p>
+                <p style="font-size: medium;">Roll No: 21CS0456 &nbsp; &#8226 &nbsp; Batch: 2021-2025</p>
+                <p style="font-size: medium;">johndoe@email.com &nbsp; &#8226 &nbsp; +91 98765 43210</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="right">
-            <div class="box h4">
-              <p>Current Semister</p>
-              <h4>6th Semister</h4>
-            </div>
-            <hr>
-            <div class="box">
-              <p>CGPA</p>
-              <h4>8.74</h4>
-            </div>
-          </div>
-        </div>
-        <div class="main-bottom">
-          <div class="overview">
-            <h4>Academic Overview</h4>
-            <div class="cards">
-              <div class="card">
-                <h4>CGPA</h4>
+
+            <div class="display-flex-center" style="gap: 20px; padding: 20px 80px">
+              <div class="display-flex-center" style="flex-direction: column;align-items: flex-start; gap: 5px">
+                <p style="font-size: small;">Current Semester</p>
+                <h3 style="width: max-content;">6th Semester</h3>
+              </div>
+              <hr style=" height: 50px; border: 1px solid #fff;" />
+              <div class=" display-flex-center " style="flex-direction: column; gap: 5px">
+                <p style="font-size: small;">CGPA</p>
                 <h2>8.74</h2>
-                <p>Out of 10</p>
-              </div>
-              <div class="card">
-                <h4>Attendance</h4>
-                <h2>92%</h2>
-                <p>This Semister</p>
-              </div>
-              <div class="card">
-                <h4>Credits Earned</h4>
-                <h2>124</h2>
-                <p>Out of 140</p>
-              </div>
-              <div class="card">
-                <h4>Class Rank</h4>
-                <h2>12</h2>
-                <p>Out of 120</p>
               </div>
             </div>
-
           </div>
+
+
           <div class="main-bottom">
+            <div class="overview">
+              <h4>Academic Overview</h4>
+              <div class="cards">
+                <div class="card">
+                  <h4>CGPA</h4>
+                  <h2>8.74</h2>
+                  <p>Out of 10</p>
+                </div>
+                <div class="card">
+                  <h4>Attendance</h4>
+                  <h2>92%</h2>
+                  <p>This Semister</p>
+                </div>
+                <div class="card">
+                  <h4>Credits Earned</h4>
+                  <h2>124</h2>
+                  <p>Out of 140</p>
+                </div>
+                <div class="card">
+                  <h4>Class Rank</h4>
+                  <h2>12</h2>
+                  <p>Out of 120</p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="main-bottom">
 
 
             <div class="personal-info">
@@ -517,12 +285,10 @@
 
               <a href="#" class="profile-link">View Full Profile ></a>
             </div>
+          </div> -->
           </div>
-
         </div>
-      </div>
-    </main>
-  </div>
-</body>
-
+      </main>
+    </div>
+  </body>
 </html>

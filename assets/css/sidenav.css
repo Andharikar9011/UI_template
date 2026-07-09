@@ -1,0 +1,71 @@
+sidenav {
+  background-color: var(--side-nav-color);
+  width: 350px;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidenav-header h2,
+.sidenav-header p {
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav-header {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  padding: 10px 20px;
+  gap: 5px;
+}
+
+.sidenav-text {
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 10px; */
+}
+
+.sidenav-logo {
+  width: 30px;
+  height: 30px;
+  background: url("../icons/logo.svg") no-repeat center/contain;
+}
+
+sidenav hr {
+  width: 100%;
+  border: 0.01px solid var(--light-gray);
+}
+
+.sidenav-content {
+  width: 70%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidenav-content div {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.sidenav-content div:hover {
+  background-color: orange;
+  filter: invert(100%);
+}
+
+.sidenav-content a {
+  display: flex;
+  align-items: center;
+  /* gap: 10px; */
+}
+
+.sidenav-card {
+  width: 80%;
+  background-color: var(--sidenav-card);
+  border-radius: 10px;
+  margin-top: 10px;
+}
