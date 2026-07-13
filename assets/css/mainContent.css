@@ -5,18 +5,16 @@
       width: calc(100% - 350px); 
       background-color: var(--primary-color);
     }
-
     .main-container {
       display: flex;
-      gap: 20px;
+      gap: 25px;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      width: calc(100% - 40px);
+      width: calc(100% - 50px);
       background-color: var(--primary-color);
       border-radius: 10px;
-      margin-top: 20px;
-      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+      margin-top: 25px;
     }
 
     .main-top {
@@ -50,17 +48,29 @@
     }
 
     .main-bottom {
-      /* flex-direction: column; */
       display: flex;
       width: 100%;
       background-color: var(--primary-color);
       gap: 10px;
     }
 
-    .main-bottom-overview {
+    .main-bottom-left {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
       width: 68%;
+      background: inherit;
+    }
+
+    .main-bottom-right {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      width: 32%;
+      background: inherit;
+    }
+    .main-element-design {
       background: #fff;
-      margin-top: 20px;
       padding: 25px;
       border-radius: 20px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -70,34 +80,12 @@
       margin-bottom: 20px;
       font-size: 20px;
     }
-
-    .main-bottom-left {
-      width: 68%;
-      background: inherit;
-      /* margin-top: 20px; */
-      padding: 25px;
-      /* border-radius: 20px; */
-      /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); */
-    }
-
-    .main-bottom-right {
-      width: 32%;
-
-      background: inherit;
-      /* margin-top: 20px; */
-      padding: 25px;
-      /* border-radius: 20px; */
-      /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); */
-    }
-
-
-
-    .cards {
+    .main-bottom-overview-cards {
       display: flex;
       gap: 20px;
     }
 
-    .card {
+    .main-bottom-overview-card {
       flex: 1;
       background: #fff;
       border: 1px solid #e5e5e5;
@@ -106,38 +94,20 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
 
-    .card h4 {
+    .main-bottom-overview-card h4 {
       color: #666;
       margin-bottom: 10px;
 
     }
 
-    .card h2 {
+    .main-bottom-overview-card h2 {
       color: black;
       margin-bottom: 8px;
     }
 
-    .card p {
+    .main-bottom-overview-card p {
       color: #999;
       font-size: 14px;
-    }
-
-    .main-bottom-table {
-      width: 68%;
-      background: #fff;
-      margin-top: 20px;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .main-bottom-left-activities {
-      width: 150%;
-      background: #fff;
-
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     }
 
 
@@ -154,16 +124,8 @@
       cursor: pointer;
     }
 
-    .personal-info {
-      width: 100%;
 
-      background: #fff;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .personal-info h2 {
+    .main-bottom-personal-info h2 {
       font-size: 22px;
       margin-bottom: 25px;
       color: #222;
@@ -194,8 +156,6 @@
     }
 
     .achivement {
-      width: 32%;
-
       background: #fff;
       border-radius: 20px;
       padding: 25px;
@@ -203,8 +163,6 @@
     }
 
     .main-bottom-right-events {
-      width: 32%;
-
       background: #fff;
       border-radius: 20px;
       padding: 25px;
