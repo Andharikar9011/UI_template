@@ -1,6 +1,6 @@
 sidenav {
   background-color: var(--side-nav-color);
-  width: 350px;
+  width: 250px;
   height: 100vh;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -16,9 +16,8 @@ sidenav {
 
 .sidenav-header {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
-  padding: 10px 20px;
+  padding: 25px;
   gap: 5px;
 }
 
