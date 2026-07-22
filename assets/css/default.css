@@ -1,45 +1,57 @@
 :root {
-      --primary-color: #f6f8fc;
-      --side-nav-color: #fffefe;
-      --secondary-color: #1965e4;
-      --sidenav-card: #f4f5fc;
-      --font-primary: #1a1a1a;
-      --font-secondary: #fefdfd;
-      --font-tertiary: #1965e4;
-      --font-side-nav: #5f6b8d;
-      --border-color: #ccc;
-      --black: #000;
-      --white: #fff;
-      --gray: #f0f0f0;
-      --light-gray: #e0e0e0;
-      --dark-gray: #a0a0a0;
-    }
+  --primary-color: #f6f8fc;
+  --side-nav-color: #fffefe;
+  --secondary-color: #1965e4;
+  --sidenav-card: #f4f5fc;
+  --font-primary: #1a1a1a;
+  --font-secondary: #fefdfd;
+  --font-tertiary: #1965e4;
+  --font-side-nav: #5f6b8d;
+  --border-color: #ccc;
+  --black: #000;
+  --white: #fff;
+  --gray: #f0f0f0;
+  --light-gray: #e0e0e0;
+  --dark-gray: #a0a0a0;
+}
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Inter", sans-serif;
-      background-color: var(--primary-color);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--primary-color);
 
-    }
+}
 
-    h1, h2, h3, h4, h5, h6,hr, pre, p {
-      margin: 0;
-      padding: 0;
-      font-family: inherit;
-      /* Ensures the pre tag uses the same font as its parent */
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+p {
+  margin: 10px;
+  padding: 4px;
+  font-family: inherit;
+  /* Ensures the pre tag uses the same font as its parent */
+}
 
-    ul,
-    li {
-      list-style-type: none;
-      /* Removes bullet points */
-      margin: 0;
-      padding: 0;
-    }
+hr {
+  margin: 0;
+  padding: 0;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-    }
+ul,
+li {
+  list-style-type: none;
+  /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
